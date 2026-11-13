@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insight WMS Documentation</title>
+<meta name="description" content="Product documentation for InsightPro WMS & SCM Suite and Insight FMS by Gerab System Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --text:#14181f; --muted:#5b6472; --border:#e3e6eb;
+  --accent:#0b5cad; --accent-soft:#e8f1fb; --chip:#eef1f5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1216; --surface:#171b21; --text:#e7eaef; --muted:#9aa3b1; --border:#2a3038;
+    --accent:#6aa9ec; --accent-soft:#1a2a3d; --chip:#222831;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1216; --surface:#171b21; --text:#e7eaef; --muted:#9aa3b1; --border:#2a3038;
+  --accent:#6aa9ec; --accent-soft:#1a2a3d; --chip:#222831;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px}
+header.hero{border-bottom:1px solid var(--border);background:var(--surface)}
+header.hero .inner{max-width:1100px;margin:0 auto;padding:48px 16px 36px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(28px,4.5vw,42px);line-height:1.15;margin:8px 0 12px;letter-spacing:-.02em}
+.lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
+.meta{margin-top:18px;font-size:14px;color:var(--muted)}
+nav.toc{position:sticky;top:24px;align-self:start;padding-top:40px;font-size:14px}
+nav.toc .label{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid var(--border)}
+nav.toc a:hover{color:var(--text);border-left-color:var(--accent)}
+main{padding:40px 0 80px;min-width:0}
+section{margin-bottom:56px;scroll-margin-top:24px}
+h2{font-size:24px;letter-spacing:-.01em;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 14px}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);margin:12px 0 20px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:none}
+th{background:var(--chip);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+td:first-child{font-weight:500;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:12px 0 20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.card strong{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:14px}
+ul.check{list-style:none;padding:0;margin:0 0 16px}
+ul.check li{padding:6px 0 6px 26px;position:relative}
+ul.check li::before{content:"";position:absolute;left:4px;top:14px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.flows{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps li{counter-increment:s;padding:8px 0 8px 38px;position:relative;border-bottom:1px dashed var(--border)}
+ol.steps li:last-child{border-bottom:none}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;display:grid;place-items:center}
+.diagram{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:12px 0 16px}
+.dg-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.dg-box{border:1px solid var(--border);background:var(--chip);border-radius:8px;padding:10px 14px;font-weight:600;font-size:14px;text-align:center;min-width:120px}
+.dg-box.primary{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.dg-arrow{text-align:center;color:var(--muted);font-size:13px;padding:8px 0}
+.callout{background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:6px;font-size:15px;margin:12px 0 16px}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.tl{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tl b{display:block;font-size:13px;color:var(--accent)}
+.tl span{font-size:14px;color:var(--muted)}
+ol.assume{padding-left:20px}
+ol.assume li{margin-bottom:10px}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center;padding:24px 16px}
+@media (max-width:820px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  nav.toc{display:none}
+  td:first-child{white-space:normal}
+}
+</style>
+</head>
+<body>
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Gerab System Solutions · Product Documentation</div>
+  <h1>Insight WMS</h1>
+  <p class="lede">InsightPro WMS &amp; SCM Suite is Gerab System Solutions' custom-built warehouse and supply chain platform for 3PL, forwarding and logistics operators.</p>
+  <div class="meta">Nov 3, 2026 · Ritul Shaji</div>
+</div></header>
+
+<div class="wrap">
+<nav class="toc" aria-label="Contents">
+  <div class="label">Contents</div>
+  <a href="#overview">Product overview</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#flows">Inbound &amp; outbound</a>
+  <a href="#3pl">3PL &amp; 4PL</a>
+  <a href="#capture">Data capture</a>
+  <a href="#integrations">Integrations &amp; analytics</a>
+  <a href="#fms">Insight FMS</a>
+  <a href="#implementation">Implementation</a>
+  <a href="#assumptions">Assumptions</a>
+  <a href="#sources">Sources</a>
+</nav>
+
+<main>
+<section id="overview">
+  <h2>Product overview</h2>
+  <p>InsightPro is one Track &amp; Trace platform that covers the supply chain end to end. Its modules are tightly integrated and highly configurable, and it gives real-time visibility from inbound to outbound.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Item</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Vendor</td><td>Gerab System Solutions</td></tr>
+      <tr><td>Product</td><td>InsightPro WMS &amp; SCM Suite</td></tr>
+      <tr><td>Target customers</td><td>3PL and 4PL providers, freight forwarders, logistics operators</td></tr>
+      <tr><td>Delivery model</td><td>Custom build per customer</td></tr>
+      <tr><td>Time to go-live</td><td>2–5 months</td></tr>
+      <tr><td>Track record</td><td>550+ successful projects in 6 countries</td></tr>
+      <tr><td>Companion product</td><td>Insight FMS (freight management)</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Core modules</h3>
+  <div class="cards">
+    <div class="card"><strong>Warehousing</strong><span>Full warehouse management with real-time inventory control</span></div>
+    <div class="card"><strong>Transportation</strong><span>Fleet and freight management with route optimization</span></div>
+    <div class="card"><strong>Distribution</strong><span>Order fulfillment and distribution center operations</span></div>
+    <div class="card"><strong>Open Yard</strong><span>Yard management and container tracking</span></div>
+  </div>
+  <h3>Key benefits claimed</h3>
+  <ul class="check">
+    <li>Accurate, real-time stock detail across all locations</li>
+    <li>Centralized control of all warehouse operations on one platform</li>
+    <li>Traceability across multiple sites and customers</li>
+    <li>Better use of labor, equipment and warehouse space</li>
+    <li>Automated billing and invoicing, so no payment is missed</li>
+    <li>Fewer errors through automated workflows, and higher productivity through mobile devices</li>
+  </ul>
+</section>
+
+<section id="architecture">
+  <h2>Architecture at a glance</h2>
+  <div class="diagram" role="img" aria-label="ERP connects through the Data Interchange Hub to four modules">
+    <div class="dg-row"><div class="dg-box">ERP</div></div>
+    <div class="dg-arrow">↓ POs · ASNs · Sales orders &nbsp;&nbsp;|&nbsp;&nbsp; Receipts · Shipments ↑</div>
+    <div class="dg-row"><div class="dg-box primary">Universal Data Interchange Hub</div></div>
+    <div class="dg-arrow">↕</div>
+    <div class="dg-row">
+      <div class="dg-box">Warehousing</div><div class="dg-box">Transportation</div><div class="dg-box">Distribution</div><div class="dg-box">Open Yard</div>
+    </div>
+  </div>
+  <p>The ERP sends purchase orders, ASNs and sales orders through the Data Interchange Hub. The four modules carry out the work, and receipts and shipments flow back to the ERP in real time.</p>
+</section>
+
+<section id="flows">
+  <h2>Inbound and outbound processes</h2>
+  <p>Both flows are scan-driven: staff use hand-held RF terminals with scanners to receive, put away, pick and pack, which raises accuracy and speed.</p>
+  <div class="flows">
+    <div class="card">
+      <h3 style="margin-top:0">Inbound: receiving &amp; put-away</h3>
+      <ol class="steps">
+        <li>Purchase order management</li><li>Advance Shipment Notices (ASN)</li><li>Receiving and inspection</li><li>Quality check and segregation</li>
+        <li>Product labeling</li><li>Automated put-away</li><li>Cross-dock operations</li><li>Workload balancing</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Outbound: picking &amp; distribution</h3>
+      <ol class="steps">
+        <li>Sales order management</li><li>Wave planning and picking</li><li>Pack and ship operations</li><li>Inventory movement</li>
+        <li>Order fulfillment</li><li>Multi-channel processing</li><li>Distribution planning</li><li>Load optimization</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="3pl">
+  <h2>3PL and 4PL capabilities</h2>
+  <p>The suite is built for third- and fourth-party logistics, where one warehouse serves many clients with separate stock, billing and SLAs.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Capability</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>Multi-client management</td><td>Separate inventories, billing and SLAs per customer</td></tr>
+      <tr><td>Flexible billing</td><td>Activity-based billing, storage fees and value-added services</td></tr>
+      <tr><td>Flow-through operations</td><td>Cross-docking and direct shipping without physical storage</td></tr>
+      <tr><td>Labor management</td><td>Tracks productivity, performance metrics and resource allocation</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Key 3PL features</h3>
+  <ul class="check">
+    <li>Traditional warehouse management</li><li>Flow-through and cross-dock functionality</li><li>Order management and processing</li><li>Quality control and inspection</li>
+    <li>Returns management</li><li>Location and storage management</li><li>Labor control and task management</li><li>Broad visibility for customers</li>
+  </ul>
+</section>
+
+<section id="capture">
+  <h2>Data capture technology</h2>
+  <p>Customers can choose barcode, RFID or a hybrid of both. Gerab states that RFID counting is 100× faster than barcode counting.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th></th><th>Barcode</th><th>RFID</th></tr></thead>
+    <tbody>
+      <tr><td>Strengths</td><td>Cost-effective, proven reliability, easy to implement, low maintenance</td><td>100× faster counting, no line of sight needed, bulk reading, real-time visibility</td></tr>
+      <tr><td>Best for</td><td>Item-level tracking, picking confirmation, receiving verification</td><td>High-volume operations, automated inventory counts, asset tracking</td></tr>
+    </tbody>
+  </table></div>
+  <p>The hybrid approach runs both together, set up to match each operation's needs.</p>
+</section>
+
+<section id="integrations">
+  <h2>Integrations, material handling and analytics</h2>
+  <p><strong>ERP integration.</strong> A Universal Data Interchange Hub keeps the WMS and the ERP in sync in real time. It integrates at both the logic level and the database level.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Integration area</th><th>Supported</th></tr></thead>
+    <tbody>
+      <tr><td>ERP platforms</td><td>SAP, Microsoft Dynamics AX, Microsoft Dynamics NAV, Oracle E-Business Suite, Scala, Synthesis, Orion</td></tr>
+      <tr><td>Protocols</td><td>EDI, XML, flat files</td></tr>
+      <tr><td>ERP to WMS (expectations)</td><td>Purchase orders, Advance Shipment Notices, sales orders</td></tr>
+      <tr><td>WMS to ERP (results)</td><td>Receipts, shipments</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Material handling equipment and external apps</h3>
+  <div class="cards">
+    <div class="card"><strong>Voice picking</strong><span>Hands-free, voice-directed picking</span></div>
+    <div class="card"><strong>Sorter systems</strong><span>Automated sorting for high-volume distribution</span></div>
+    <div class="card"><strong>Pick to light</strong><span>Light-directed picking for accuracy and speed</span></div>
+    <div class="card"><strong>Document management</strong><span>Digital document capture and workflow automation</span></div>
+  </div>
+  <h3>Analytics and BI</h3>
+  <ul class="check">
+    <li>SCM data is structured for direct use by BI tools</li>
+    <li>Built-in custom reports and dashboards, shaped to business requirements</li>
+    <li>Connects to the customer's existing BI tools, and Gerab will help build dashboards on popular BI platforms</li>
+  </ul>
+</section>
+
+<section id="fms">
+  <h2>Insight FMS (Freight Management System)</h2>
+  <p>Insight FMS covers air, sea and land freight for import, export and trans-shipment, plus road transport pickup and dispatch. It gives real-time order visibility: order and pricing details, service options, proof of delivery, and shipment tracking by order number, carrier, date or customer.</p>
+  <h3>Key features</h3>
+  <ul class="check">
+    <li>Multimodal operations (air, sea and land)</li><li>Individual and consolidated jobs</li><li>Intuitive user interface</li><li>Online shipment tracking and tracing</li>
+    <li>Multi-company, multi-location and multi-currency</li><li>Generates the relevant shipping documents</li><li>Better global supply chain efficiency and visibility</li><li>Better pricing and margin analysis</li>
+  </ul>
+</section>
+
+<section id="implementation">
+  <h2>Implementation</h2>
+  <div class="timeline">
+    <div class="tl"><b>Phases 1–4</b><span>11–20 weeks total</span></div>
+    <div class="tl"><b>Development</b><span>Longest phase · 6–12 weeks</span></div>
+    <div class="tl"><b>Go-live</b><span>2–5 months</span></div>
+    <div class="tl"><b>Phase 5 · Support</b><span>Continues after launch</span></div>
+  </div>
+  <p>The roadmap has 5 phases with one deliverable each. Phases 1–4 take 11–20 weeks, which matches the stated 2–5 months to go-live. Development is the longest phase at 6–12 weeks, and support continues after launch.</p>
+</section>
+
+<section id="assumptions">
+  <h2>Assumptions</h2>
+  <ol class="assume">
+    <li><strong>Source material.</strong> Everything here comes from the two PDFs listed under Sources. Neither PDF is dated.</li>
+    <li><strong>Product name.</strong> "Insight WMS" is taken to mean <strong>InsightPro WMS &amp; SCM Suite</strong>, the name used throughout the Gerab deck.</li>
+    <li><strong>Vendor of Insight FMS.</strong> The FMS one-pager doesn't name a vendor. It's assumed to be a Gerab product from the same Insight family.</li>
+    <li><strong>FMS vs the Transportation module.</strong> It's unclear whether Insight FMS is the suite's Transportation module or a separate product. It's documented separately here.</li>
+    <li><strong>Vendor claims.</strong> Figures such as 550+ projects, 6 countries, 100× faster RFID counting and the listed benefits are Gerab's marketing claims. They haven't been independently verified.</li>
+    <li><strong>Process order.</strong> The deck numbers the inbound and outbound steps 1–8, so they're shown as a sequence. Some of them, such as cross-docking and workload balancing, may really be parallel capabilities rather than steps.</li>
+    <li><strong>Implementation timeline.</strong> The phase durations add up to 11–20 weeks for phases 1–4, which fits the stated 2–5 months. Each deliverable is matched to the phase it sits under in the deck.</li>
+    <li><strong>ERP list.</strong> Synthesis and Orion are assumed to be ERP products, and the supported list is assumed to be current as of the deck.</li>
+    <li><strong>Gaps.</strong> The sources say nothing about pricing, licensing, hosting (cloud or on-premise), tech stack, security, user roles or SLAs. Those topics are left out rather than guessed.</li>
+    <li><strong>Audience.</strong> The doc is written as a neutral product overview for internal and customer sharing, not as a sales pitch.</li>
+  </ol>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul class="check">
+    <li><em>Gerab System Solutions — InsightPro WMS &amp; SCM Suite</em> deck, 14 pages</li>
+    <li><em>Insight FMS — Freight Management System</em> one-pager</li>
+  </ul>
+</section>
+</main>
+</div>
+<footer>Insight WMS — Product Documentation · Gerab System Solutions</footer>
+</body>
+</html>
