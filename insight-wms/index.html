@@ -3,8 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insight WMS Documentation</title>
+<title>InsightPro WMS Documentation</title>
 <meta name="description" content="Product documentation for InsightPro WMS & SCM Suite and Insight FMS by Gerab System Solutions.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/insightpro-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="InsightPro WMS — Product Documentation">
+<meta property="og:description" content="Warehouse and supply chain platform for 3PL, forwarding and logistics operators in the UAE. By Gerab System Solutions.">
+<meta property="og:image" content="https://insight-wms-docs.vercel.app/assets/og.png">
+<meta property="og:url" content="https://insight-wms-docs.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -33,6 +41,16 @@ header.hero .inner{max-width:1100px;margin:0 auto;padding:48px 16px 36px}
 h1{font-size:clamp(28px,4.5vw,42px);line-height:1.15;margin:8px 0 12px;letter-spacing:-.02em}
 .lede{font-size:18px;color:var(--muted);max-width:720px;margin:0}
 .meta{margin-top:18px;font-size:14px;color:var(--muted)}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:.01em}
+.brand img{width:48px;height:48px;border-radius:12px}
+.brand small{display:block;font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.by{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);text-align:right}
+.by img{width:40px;height:auto}
+.about{display:flex;gap:20px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px}
+.about img{width:64px;height:auto;flex:none}
+.foot{display:flex;align-items:center;justify-content:center;gap:10px}
+.foot img{width:24px;height:auto}
 nav.toc{position:sticky;top:24px;align-self:start;padding-top:40px;font-size:14px}
 nav.toc .label{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
 nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid var(--border)}
@@ -73,7 +91,13 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:26
 ol.assume{padding-left:20px}
 ol.assume li{margin-bottom:10px}
 footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center;padding:24px 16px}
+@media print{
+  nav.toc{display:none} .wrap{display:block} header.hero{border:none}
+  section{break-inside:avoid-page} .card,.table-wrap{break-inside:avoid}
+}
 @media (max-width:820px){
+  .by span{display:none}
+  .about{flex-direction:column}
   .wrap{grid-template-columns:1fr;gap:0}
   nav.toc{display:none}
   td:first-child{white-space:normal}
@@ -82,10 +106,14 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;text
 </head>
 <body>
 <header class="hero"><div class="inner">
-  <div class="eyebrow">Gerab System Solutions · Product Documentation</div>
-  <h1>Insight WMS</h1>
+  <div class="brandbar">
+    <div class="brand"><img src="assets/insightpro-icon.png" alt="InsightPro logo"><div>InsightPro<small>Warehouse Management System</small></div></div>
+    <div class="by"><span>A product of<br><strong>Gerab System Solutions</strong></span><img src="assets/gerab-logo.png" alt="Gerab logo"></div>
+  </div>
+  <div class="eyebrow">Product Documentation</div>
+  <h1>InsightPro WMS</h1>
   <p class="lede">InsightPro WMS &amp; SCM Suite is Gerab System Solutions' custom-built warehouse and supply chain platform for 3PL, forwarding and logistics operators.</p>
-  <div class="meta">Nov 3, 2026 · Ritul Shaji</div>
+  <div class="meta">Version 1.0 · November 2026 · Prepared by Ritul Shaji</div>
 </div></header>
 
 <div class="wrap">
@@ -104,7 +132,7 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;text
   <a href="#security">Hosting &amp; security</a>
   <a href="#uae">UAE readiness</a>
   <a href="#implementation">Implementation</a>
-  <a href="#sources">Sources</a>
+  <a href="#about">About Gerab</a>
 </nav>
 
 <main>
@@ -329,15 +357,18 @@ footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px;text
   <p>The roadmap has 5 phases with one deliverable each. Phases 1–4 take 11–20 weeks, which matches the stated 2–5 months to go-live. Development is the longest phase at 6–12 weeks, and support continues after launch.</p>
 </section>
 
-<section id="sources">
-  <h2>Sources</h2>
-  <ul class="check">
-    <li><em>Gerab System Solutions — InsightPro WMS &amp; SCM Suite</em> deck, 14 pages</li>
-    <li><em>Insight FMS — Freight Management System</em> one-pager</li>
-  </ul>
+<section id="about">
+  <h2>About Gerab System Solutions</h2>
+  <div class="about">
+    <img src="assets/gerab-logo.png" alt="Gerab logo">
+    <div>
+      <p>Gerab System Solutions builds InsightPro WMS &amp; SCM Suite and Insight FMS: custom-built warehouse, supply chain and freight platforms for 3PL, 4PL, forwarding and logistics operators.</p>
+      <p style="margin:0"><strong>See InsightPro in action.</strong> Contact your Gerab representative to arrange a live demo tailored to your warehouse operations.</p>
+    </div>
+  </div>
 </section>
 </main>
 </div>
-<footer>Insight WMS — Product Documentation · Gerab System Solutions</footer>
+<footer><div class="foot"><img src="assets/gerab-logo.png" alt="">© 2026 Gerab System Solutions · InsightPro WMS Product Documentation</div></footer>
 </body>
 </html>
