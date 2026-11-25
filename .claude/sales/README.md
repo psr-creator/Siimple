@@ -21,8 +21,8 @@ Shared knowledge lives in `playbook.md`. Fill every `[FILL]` (day rates, package
 
 Run **`/sdr-daily`** each morning (optionally `/sdr-daily construction Sharjah 10`). It:
 1. lists follow-ups due today from `prospecting/tracker.csv`,
-2. finds and scores new target companies (`lead-researcher`, via Lusha + web),
-3. names decision-makers (contact reveals only after you approve, because they cost credits),
+2. finds and scores new target companies (`lead-researcher`, web research only; **no Lusha credits without your permission**),
+3. names decision-makers (Lusha reveals only for contacts you mark `Y` in the tracker),
 4. drafts the Day-1 email, call opener and LinkedIn note (`outreach-writer`),
 5. writes `prospecting/YYYY-MM-DD-callsheet.md`.
 

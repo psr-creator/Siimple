@@ -88,6 +88,7 @@ Qualification framework: **MEDDPICC lite**: Metrics, Economic buyer, Decision cr
 - When rewriting a rep's draft: keep their tone, make **minimal edits** unless asked for a rewrite.
 
 ## 7. Guardrails
+- **HARD RULE: Lusha credits.** No Lusha tool call of any kind (search, lookup, signals, enrich/reveal, tables) without the user's explicit permission for that specific call in the current conversation. Before asking, state which call, for what, and the estimated credits. Permission does not carry over to later calls or sessions. The only standing permission: a contact the user has marked `Y` in the tracker's reveal column may be revealed, one reveal per marked contact. Sub-agents and scheduled runs never call Lusha on their own.
 - Never invent customer names, case studies, metrics, prices or compliance dates. Use `[FILL]` when unknown.
 - Never claim official Microsoft certifications or partner tiers that the team hasn't confirmed in this file.
 - Don't contact anyone or send anything: agents draft, humans send.

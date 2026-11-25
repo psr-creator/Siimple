@@ -5,6 +5,8 @@ description: Run the daily AI-SDR routine for Artelliq. Builds today's prospect 
 
 # SDR Daily Routine
 
+> **HARD RULE: no Lusha calls without the user's explicit permission** (see playbook section 7). Research is web-only by default. If Lusha would help, stop and ask: which call, why, estimated credits. The only standing permission is revealing contacts the user marked `Y` in the tracker.
+
 Goal: the rep opens one file at 9:15 and starts calling at 9:30. Claude researches and drafts; **the human reviews, sends and calls**. Never send or post anything yourself.
 
 ## Inputs (ask only if missing and not inferable)
@@ -29,7 +31,7 @@ Create the folder and the tracker with a header row if they don't exist.
    - Construction: Finance Manager, Commercial/QS Manager, MD
    - Manufacturing: Plant/Operations Manager, CFO
    - 3PL/e-com: Operations/Warehouse Manager, GM
-   Do not reveal emails or phones. List which contacts are worth revealing, then ask the user before using any Lusha enrich tool.
+   Find them from the web (company site, LinkedIn). Do not reveal emails or phones. List which contacts are worth revealing; the user approves by marking `Y` in the tracker.
 5. **Drafts.** For each new contact, use the `outreach-writer` agent for: a Day-1 email (≤120 words, 2 subject options), a 20-second call opener, and a LinkedIn connection note (≤280 characters). Personalise each with one real fact from the research.
 6. **Write the call sheet** `prospecting/YYYY-MM-DD-callsheet.md`:
    - Summary line: X follow-ups, Y new companies, Z contacts.
@@ -37,7 +39,7 @@ Create the folder and the tracker with a header row if they don't exist.
    - **Follow-ups due** with their drafted touch.
    - **New prospects**: per company, a 3-line brief, then the drafts.
 7. **Update the tracker.** Append new contacts with `status=new`, `touch_no=0`, `next_touch=today`. Don't mark anything `contacted`; the rep does that after actually sending or calling.
-8. **Report in chat:** counts, the top 3 to call first and why, and how many Lusha credits a reveal would cost (from `account_usage`, if available).
+8. **Report in chat:** counts, the top 3 to call first and why, and the number of contacts suggested for reveal. Do not call Lusha to check credit prices.
 
 ## End-of-day update (when the user says "log today" or pastes outcomes)
 For each outcome, update the tracker: status, `last_touch=today`, `touch_no+1`, `next_touch` per the sequence. "Not interested" → `nurture` with next_touch +90 days. "Wrong person" → add the referred contact. "Unsubscribe" → `do_not_contact`. Then print the totals for the day: dials, connects, meetings booked.
