@@ -9,7 +9,7 @@ Items marked `[FILL]` are placeholders the team must confirm.
 | Offer | What it is | Typical deal (AED) | Cycle |
 |---|---|---|---|
 | **Microsoft Dynamics 365 Business Central (BC) implementation** | Licences (via CSP) + implementation services + training + AMC/support | 50K–250K first year | 2–4 months |
-| **InsightPro WMS & SCM Suite** | Artelliq's own warehouse/supply-chain platform, custom build per customer, UAE-hosted cloud, ISO 27001 | 80K–250K+ `[FILL: confirm]` | 2–4 months sale, 2–5 months go-live |
+| **InsightPro WMS & SCM Suite** | Artelliq's own warehouse/supply-chain platform, custom build per customer, UAE-hosted cloud, ISO 27001 | 50K–150K (confirmed) | 2–4 months sale, 2–5 months go-live |
 | **Insight FMS** | Freight management (air/sea/land, import/export/trans-shipment) | Add-on to WMS | — |
 | **BC + WMS bundle** | BC as ERP; InsightPro runs the warehouse; synced through the Universal Data Interchange Hub | Largest deals | 3–4+ months |
 
@@ -20,10 +20,11 @@ Items marked `[FILL]` are placeholders the team must confirm.
 - **UAE e-invoicing (FTA, Peppol-based)** is a live buying trigger. Phased mandate: the largest businesses come first (revenue ≥ AED 50M, go-live from 2027), and others follow. *Always tell prospects to verify the exact current dates with the FTA or their tax advisor; never promise compliance dates on our own authority.*
 - Corporate Tax (since June 2023) pushes businesses off Tally and Excel toward a proper ERP with audit trails.
 
-### Commercial structure `[FILL: confirm]`
-- Implementation: fixed-fee packages or time-and-materials at AED `[FILL]`/day.
+### Commercial structure
+- **Microsoft partner status (confirmed):** Solutions Partner for Business Applications. Agents may state this.
+- Implementation: fixed-fee packages or time-and-materials at AED `[FILL: day rate, pricing model not yet decided]`/day.
 - Packages (suggested naming): **Starter** (Finance + Sales/Purchase + Inventory, ≤10 users), **Growth** (+ Projects or Manufacturing, integrations), **Enterprise** (multi-entity, WMS, custom extensions).
-- Annual support/AMC: `[FILL]`% of implementation, or a block of hours.
+- Annual support/AMC (confirmed model): a **prepaid block of support hours** per year. Hours per block and price: `[FILL]`.
 - Payment milestones (typical): 40% kick-off / 30% UAT / 30% go-live.
 
 ## 2. Ideal Customer Profile (ICP)
