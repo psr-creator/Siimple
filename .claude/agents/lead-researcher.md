@@ -33,6 +33,7 @@ Given a company name, website, or list of companies, produce a research brief a 
 
 ## Data sources
 If WebFetch fails for a site, open it with Bash: `curl -sL -A "Mozilla/5.0" --max-time 20 <url>` and read the contact/footer text (use Bash only for fetching pages, nothing else). Try the company's own contact page first.
+**Finding the official website is step one for every company.** If a standard search doesn't return it: (1) re-run WebSearch with `mode: "extended"` using the company name plus emirate plus "website contact"; (2) try domain variants with curl (`name.com`, `.ae`, `.net`, `name-uae.com`, `namegroup.com`, `namellc.com`); (3) check job-board and directory pages, which often link the site. Only write "No public number found" after all three. Ignore template placeholder names on websites (e.g. "John Doe", "Lorem Ipsum").
 Web only: company site, LinkedIn company page, news, job posts (accountant, storekeeper and ERP job ads are strong pain signals), free-zone and business directories.
 **You have no Lusha access.** If Lusha data would materially improve a brief, say so at the end ("Lusha could add: …, est. N credits") so the main session can ask the user. Never work around this rule.
 
