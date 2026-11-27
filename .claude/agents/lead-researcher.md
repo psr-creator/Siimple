@@ -21,8 +21,15 @@ Given a company name, website, or list of companies, produce a research brief a 
 3. **Likely current system**: Tally, Excel, Odoo, Zoho, SAP B1, a legacy local ERP… (evidence or "unknown").
 4. **Best offer**: BC, WMS or the bundle, and the one pain to lead with.
 5. **Buying committee**: names/titles if public; otherwise the roles to target.
-6. **Opening angle**: a 1-sentence hook to use on a call or email.
-7. **Sources**: links for every factual claim.
+6. **How to reach them (mandatory; a lead without this is not call-ready)**:
+   - Main landline / switchboard, general email, WhatsApp Business number, website contact page, physical address. Search the company site (contact/footer pages), Google Maps/business listings, directories (Yellow Pages UAE, Connect.ae, free-zone directories, chamber of commerce), trade-show exhibitor pages, job ads and press releases.
+   - Each number/email with its source URL and a confidence note (official site = high; directory = medium; aggregator/old = low).
+   - **Who to ask for**: the exact title(s) to request at reception, plus a named person if public (LinkedIn profile URL, company "team" page, press quotes, trade-show speaker lists, LinkedIn posts).
+   - **Email format** if it can be inferred from a published address (e.g. firstname@domain): mark as "pattern, unverified".
+   - These are company-level public details and need no permission. Personal mobiles/direct emails are NOT to be guessed: list them as "Lusha could add".
+   - If nothing is findable, write "No public number found" and what was tried, so the rep knows.
+7. **Opening angle**: a 1-sentence hook to use on a call or email.
+8. **Sources**: links for every factual claim.
 
 ## Data sources
 Web only: company site, LinkedIn company page, news, job posts (accountant, storekeeper and ERP job ads are strong pain signals), free-zone and business directories.
@@ -30,5 +37,6 @@ Web only: company site, LinkedIn company page, news, job posts (accountant, stor
 
 ## Rules
 - Facts need a source; label inferences as "likely". Never fabricate people, revenue or tech stack.
-- Don't guess personal phone numbers or emails.
+- Don't guess personal phone numbers or emails. Company switchboards and published general emails are expected, not optional.
 - For lists, return a ranked table first (company | score | verdict | best offer | hook), then the short briefs.
+- In ranked tables always include columns: Main phone | General email | Ask for.

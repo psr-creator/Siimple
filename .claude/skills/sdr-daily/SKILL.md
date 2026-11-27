@@ -31,11 +31,12 @@ Create the folder and the tracker with a header row if they don't exist.
    - Construction: Finance Manager, Commercial/QS Manager, MD
    - Manufacturing: Plant/Operations Manager, CFO
    - 3PL/e-com: Operations/Warehouse Manager, GM
-   Find them from the web (company site, LinkedIn). Do not reveal emails or phones. List which contacts are worth revealing; the user approves by marking `Y` in the tracker.
+   Find them from the web (company site, LinkedIn). **Also collect for every company: main landline, general email, WhatsApp (if published), address, and who to ask for at reception, each with its source.** A company with no reachable number goes to the bottom of the list with a note. Do not reveal emails or phones. List which contacts are worth revealing; the user approves by marking `Y` in the tracker.
 5. **Drafts.** For each new contact, use the `outreach-writer` agent for: a Day-1 email (≤120 words, 2 subject options), a 20-second call opener, and a LinkedIn connection note (≤280 characters). Personalise each with one real fact from the research.
 6. **Write the call sheet** `prospecting/YYYY-MM-DD-callsheet.md`:
    - Summary line: X follow-ups, Y new companies, Z contacts.
-   - **Call list** table, ordered by ICP score: # | Company | Contact & title | Score | Hook (1 line) | Phone (blank until revealed).
+   - **Call list** table, ordered by ICP score: # | Company | Main phone | General email | Ask for (title / name) | Score | Hook (1 line) | Direct line (blank until revealed).
+   - **Reception script** (once per sheet): how to get past the switchboard to the target role.
    - **Follow-ups due** with their drafted touch.
    - **New prospects**: per company, a 3-line brief, then the drafts.
 7. **Update the tracker.** Append new contacts with `status=new`, `touch_no=0`, `next_touch=today`. Don't mark anything `contacted`; the rep does that after actually sending or calling.
