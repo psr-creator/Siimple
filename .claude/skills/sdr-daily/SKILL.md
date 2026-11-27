@@ -15,16 +15,18 @@ Goal: the rep opens one file at 9:15 and starts calling at 9:30. Claude research
 - Count of new companies (default: 10)
 
 ## Files
-Data lives in `prospecting/` at the repo root (git-ignored in a public website repo: see README).
-- `prospecting/tracker.csv`: one row per contact. Columns:
-  `company,domain,segment,emirate,icp_score,contact,title,linkedin,status,last_touch,next_touch,touch_no,notes`
+The tracker is an **Excel workbook**: `prospecting/Artelliq_SDR_Tracker.xlsx` (git-ignored; the rep keeps the master copy in OneDrive and attaches the latest one at the start of a session; if an attached copy is newer, use it).
+- Tab **Tracker**, columns A–Q: Company, Website, Segment, Emirate, ICP score, Contact, Title, Main phone, Email, Reveal (Y/N), Direct line, Status, Last touch, Next touch, Touch #, Follow-up (formula: never overwrite), Notes.
   Status values: `new, contacted, replied, meeting_booked, nurture, not_fit, do_not_contact`.
+- Tab **Daily log**: Date, Dials, Connects, Emails sent, LinkedIn, WhatsApp, Meetings booked (H–I are formulas; never overwrite).
+- Tabs **Summary**, **How to use**, **Lists**: formulas and dropdown sources; don't edit.
+- Edit with `openpyxl` (load normally, never `data_only=True` before saving), write real dates (not text), append new rows below the last filled row, keep fonts/fills, then recalculate with the xlsx skill's `recalc.py` and confirm zero errors.
 - `prospecting/YYYY-MM-DD-callsheet.md`: today's output.
-Create the folder and the tracker with a header row if they don't exist.
+- If the workbook is missing, rebuild it with the same tabs and columns.
 
 ## Steps
-1. **Load context.** Read `.claude/sales/playbook.md` and `prospecting/tracker.csv`.
-2. **Follow-ups first.** Rows where `next_touch` ≤ today and status is not `do_not_contact`, `not_fit` or `meeting_booked`. For each one, ask the `outreach-writer` agent for the next touch in the 5-touch sequence (Day 1 email → Day 3 call → Day 5 LinkedIn → Day 8 email with a new angle → Day 14 break-up).
+1. **Load context.** Read `.claude/sales/playbook.md` and the Tracker tab of `prospecting/Artelliq_SDR_Tracker.xlsx`.
+2. **Follow-ups first.** Rows where Next touch ≤ today (Follow-up column shows DUE) and status is not `do_not_contact`, `not_fit` or `meeting_booked`. For each one, ask the `outreach-writer` agent for the next touch in the 5-touch sequence (Day 1 email → Day 3 call → Day 5 LinkedIn → Day 8 email with a new angle → Day 14 break-up).
 3. **New companies.** Use the `lead-researcher` agent to find and score about 1.5× the count. Skip any domain already in the tracker. Keep the top N with score ≥ 60 and "Pursue now".
 4. **Decision-makers.** For each kept company, `lead-researcher` names 1–2 contacts by segment:
    - Trading/services: MD/GM, CFO/Finance Manager
@@ -39,8 +41,8 @@ Create the folder and the tracker with a header row if they don't exist.
    - **Reception script** (once per sheet): how to get past the switchboard to the target role.
    - **Follow-ups due** with their drafted touch.
    - **New prospects**: per company, a 3-line brief, then the drafts.
-7. **Update the tracker.** Append new contacts with `status=new`, `touch_no=0`, `next_touch=today`. Don't mark anything `contacted`; the rep does that after actually sending or calling.
+7. **Update the tracker.** Append new contacts to the Tracker tab with Status=new, Touch #=0, Next touch=today, and the Main phone, Email, Website filled from research. Don't mark anything `contacted`; the rep does that after actually sending or calling.
 8. **Report in chat:** counts, the top 3 to call first and why, and the number of contacts suggested for reveal. Do not call Lusha to check credit prices.
 
 ## End-of-day update (when the user says "log today" or pastes outcomes)
-For each outcome, update the tracker: status, `last_touch=today`, `touch_no+1`, `next_touch` per the sequence. "Not interested" → `nurture` with next_touch +90 days. "Wrong person" → add the referred contact. "Unsubscribe" → `do_not_contact`. Then print the totals for the day: dials, connects, meetings booked.
+For each outcome, update the Tracker tab: Status, Last touch=today, Touch #+1, Next touch per the sequence, Notes; and add a Daily log row (dials, connects, emails, LinkedIn, WhatsApp, meetings). "Not interested" → `nurture` with next_touch +90 days. "Wrong person" → add the referred contact. "Unsubscribe" → `do_not_contact`. Recalculate, then print the totals for the day and send the updated workbook to the user so they can save it back to OneDrive.
